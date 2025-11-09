@@ -1,154 +1,102 @@
-/* General */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    color: #333;
-    transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
 }
 
 .container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
-    background: rgba(255,255,255,0.95);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background: white;
+  padding: 25px 35px;
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
 }
 
-/* Headings */
 h1 {
-    text-align: center;
-    color: #4b79a1;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
+
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.task-form input,
+.task-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1 1 120px;
+  font-size: 14px;
+}
+
+#addBtn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#addBtn:hover {
+  background-color: #45a049;
+}
+
 h2 {
-    margin-top: 20px;
-    color: #355c7d;
+  text-align: center;
+  margin-top: 25px;
+  color: #444;
 }
 
-/* Forms */
-input, select {
-    padding: 10px;
-    margin: 5px 5px 10px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    outline: none;
-    transition: 0.3s;
+.task {
+  background: #f8f8f8;
+  border-left: 5px solid #4caf50;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-input:focus, select:focus {
-    border-color: #4b79a1;
+.task p {
+  margin: 5px 0;
 }
 
-.add-btn, .theme-btn {
-    padding: 10px 15px;
-    background: #6a82fb;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 5px 0;
+button.complete-btn,
+button.delete-btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
-.add-btn:hover, .theme-btn:hover {
-    background: #fc5c7d;
+.complete-btn {
+  background: #2196f3;
+  color: white;
 }
 
-/* Project List */
-.project-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.delete-btn {
+  background: #f44336;
+  color: white;
 }
 
-.project-card {
-    padding: 10px 15px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #f093fb, #f5576c);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.project-card:hover {
-    transform: scale(1.05);
+.complete-btn:hover {
+  background: #0b7dda;
 }
 
-/* Task Cards */
-.task-card {
-    background: linear-gradient(135deg, #89f7fe, #66a6ff);
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.task-card:hover {
-    transform: translateY(-3px);
-}
-
-.task-card.completed {
-    background: #b8e986;
-    text-decoration: line-through;
-    color: #555;
-}
-
-/* Buttons inside task cards */
-.update-btn, .delete-btn {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 5px;
-    color: white;
-}
-
-.update-btn { background: #4caf50; }
-.update-btn:hover { background: #45a049; }
-
-.delete-btn { background: #f44336; }
-.delete-btn:hover { background: #d32f2f; }
-
-/* Priority Badge */
-.status, .priority, .due-date {
-    font-weight: bold;
-    padding: 3px 7px;
-    border-radius: 6px;
-    margin-left: 5px;
-}
-
-.status {
-    background: #ffb74d;
-    color: #fff;
-}
-
-.priority.low { background: #64b5f6; }
-.priority.medium { background: #ffb74d; }
-.priority.high { background: #e57373; }
-
-.due-date {
-    background: #ba68c8;
-    color: #fff;
-}
-
-/* Dark Theme */
-body.dark {
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: #f0f0f0;
-}
-body.dark .container {
-    background: rgba(40, 40, 40, 0.95);
-}
-body.dark input, body.dark select {
-    border-color: #666;
-    background: #333;
-    color: #fff;
-}
-body.dark .add-btn, body.dark .theme-btn {
-    background: #2980b9;
+.delete-btn:hover {
+  background: #d32f2f;
 }
