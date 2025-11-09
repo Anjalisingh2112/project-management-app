@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Management App</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+
+<h1>🗂 Project Management App</h1>
+
+<!-- Add Project -->
+<div class="project-form">
+<input id="projectInput" placeholder="New project name..." />
+<button class="add-btn" onclick="addProject()">Add Project</button>
+</div>
+
+<div class="project-list" id="projects"></div>
+<hr>
+
+<h2 id="projectTitle">Select a project</h2>
+
+<!-- Add Task -->
+<div class="task-form">
+<input id="taskInput" placeholder="Enter task..." />
+<select id="statusSelect">
+<option>Pending</option>
+<option>Completed</option>
+</select>
+<select id="prioritySelect">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+<input type="date" id="dueDate" />
+<button class="add-btn" onclick="addTask()">Add Task</button>
+<button class="theme-btn" onclick="toggleTheme()">🌓 Theme</button>
+</div>
+
+<div id="tasks"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
